@@ -1,0 +1,165 @@
+{
+    "id": null,
+    "uid": "xiaomi-sensors",
+    "title": "Sensor",
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "links": [],
+    "panels": [
+      {
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "id": 2,
+        "options": {
+          "legend": {
+            "displayMode": "list",
+            "placement": "bottom"
+          },
+          "tooltipOptions": {
+            "mode": "single"
+          }
+        },
+        "targets": [
+          {
+            "expr": "sensor_temperature_celsius{sensor=\"$sensor\"}",
+            "format": "time_series",
+            "interval": "",
+            "intervalFactor": 2,
+            "legendFormat": "{{sensor}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Temperatur in °C",
+        "type": "timeseries"
+      },
+      {
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        },
+        "id": 4,
+        "options": {
+          "legend": {
+            "displayMode": "list",
+            "placement": "bottom"
+          },
+          "tooltipOptions": {
+            "mode": "single"
+          }
+        },
+        "targets": [
+          {
+            "expr": "sensor_humidity_percent{sensor=\"$sensor\"}",
+            "format": "time_series",
+            "interval": "",
+            "intervalFactor": 2,
+            "legendFormat": "{{sensor}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Luftfeuchtigkeit in %",
+        "type": "timeseries"
+      },
+      {
+        "datasource": "Prometheus",
+        "fieldConfig": {
+          "defaults": {},
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 9,
+          "w": 12,
+          "x": 0,
+          "y": 9
+        },
+        "id": 6,
+        "options": {
+          "legend": {
+            "displayMode": "list",
+            "placement": "bottom"
+          },
+          "tooltipOptions": {
+            "mode": "single"
+          }
+        },
+        "targets": [
+          {
+            "expr": "sensor_battery_raw{sensor=\"$sensor\"}",
+            "format": "time_series",
+            "interval": "",
+            "intervalFactor": 2,
+            "legendFormat": "{{sensor}}",
+            "refId": "A"
+          }
+        ],
+        "title": "Batteriestatus (mV)",
+        "type": "timeseries"
+      }
+    ],
+    "refresh": "15s",
+    "schemaVersion": 32,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": false,
+            "text": "Alle",
+            "value": "$__all"
+          },
+          "datasource": "Prometheus",
+          "definition": "label_values(sensor_temperature_celsius, sensor)",
+          "hide": 0,
+          "includeAll": true,
+          "label": "Sensor",
+          "multi": false,
+          "name": "sensor",
+          "query": "label_values(sensor_temperature_celsius, sensor)",
+          "refresh": 1,
+          "regex": "",
+          "sort": 0,
+          "type": "query"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "version": 1,
+    "overwrite": true
+  }
+  
