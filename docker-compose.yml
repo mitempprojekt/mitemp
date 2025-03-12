@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  mitemp:
+    build: .
+    container_name: mitemp
+    network_mode: host
+    volumes:
+      - /home/pi/image/sensors.ini:/app/sensors.ini:ro
+      - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
+    privileged: true
+    restart: unless-stopped
