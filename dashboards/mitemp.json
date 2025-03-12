@@ -23,7 +23,9 @@
       {
         "datasource": "Prometheus",
         "fieldConfig": {
-          "defaults": {},
+          "defaults": {
+            "unit": "celsius"
+          },
           "overrides": []
         },
         "gridPos": {
@@ -52,13 +54,17 @@
             "refId": "A"
           }
         ],
-        "title": "Temperatur in °C",
+        "title": "Temperatur",
         "type": "timeseries"
       },
       {
         "datasource": "Prometheus",
         "fieldConfig": {
-          "defaults": {},
+          "defaults": {
+            "min": 0,
+            "max": 100,
+            "unit": "percent"
+          },
           "overrides": []
         },
         "gridPos": {
@@ -87,13 +93,15 @@
             "refId": "A"
           }
         ],
-        "title": "Luftfeuchtigkeit in %",
+        "title": "Luftfeuchtigkeit",
         "type": "timeseries"
       },
       {
         "datasource": "Prometheus",
         "fieldConfig": {
-          "defaults": {},
+          "defaults": {
+            "unit": "mV"
+          },
           "overrides": []
         },
         "gridPos": {
@@ -122,7 +130,7 @@
             "refId": "A"
           }
         ],
-        "title": "Batteriestatus (mV)",
+        "title": "Batteriespannung",
         "type": "timeseries"
       }
     ],

@@ -35,7 +35,10 @@ services:
     environment:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=grafana
+      - GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH=/var/lib/grafana/dashboards/mitemp.json
     volumes:
       - '/home/pi/mitemp/datasource.yaml:/etc/grafana/provisioning/datasources/datasource.yaml'
       - '/home/pi/mitemp/dashboards.yaml:/etc/grafana/provisioning/dashboards/dashboards.yaml'
       - '/home/pi/mitemp/dashboards:/var/lib/grafana/dashboards'
+      - '/home/pi/mitemp/pushover.yaml:/etc/grafana/provisioning/notifiers/pushover.yaml'
+      - 'home/pi/mitemp/alerts.yaml:/etc/grafana/provisioning/rules/alerts.yaml'
