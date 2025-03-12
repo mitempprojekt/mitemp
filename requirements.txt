@@ -1,2 +1,0 @@
-bleak>=0.12.1
-prometheus_client>=0.14.1
