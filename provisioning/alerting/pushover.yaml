@@ -1,0 +1,11 @@
+apiVersion: 1
+contactPoints:
+    - orgId: 1
+      name: pushover
+      receivers:
+        - uid: eefn9frd5ws8wb
+          type: pushover
+          settings:
+            apiToken: YOUR_KEY_HERE
+            userKey: YOUR_KEY_HEE
+          disableResolveMessage: false
